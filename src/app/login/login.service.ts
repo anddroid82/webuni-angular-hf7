@@ -19,6 +19,10 @@ export class LoginService {
     localStorage.setItem(this.storageLoggedUserField,un);
   }
 
+  removeLoggedUserFromStorage() {
+    localStorage.removeItem(this.storageLoggedUserField);
+  }
+
   readUsersArrayFromStorage():string[] {
     const usersJSON = localStorage.getItem(this.storageUsersField);
     let usersArray = [];

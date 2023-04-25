@@ -7,10 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'webuni-angular-hf7';
+  title = APP_TITLE;
 
-  constructor(private router:Router, private route:ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
 
   }
-
 }
+export const APP_TITLE = "Task manager";

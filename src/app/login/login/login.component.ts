@@ -29,6 +29,7 @@ export class LoginComponent {
       this.loginService.writeLoggedUserToStorage(this.username);
       this.router.navigateByUrl('dashboard');
     }
+    this.username = '';
   }
 
 }
