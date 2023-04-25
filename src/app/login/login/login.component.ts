@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class LoginComponent {
 
-  username = 'aas';
+  username = '';
   
   loginClicked() {
     console.log(this.username);
