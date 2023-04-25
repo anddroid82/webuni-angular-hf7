@@ -8,3 +8,9 @@ import { Component } from '@angular/core';
 export class TaskNewComponent {
 
 }
+
+export interface Task {
+  name:string,
+  description:string,
+  user:string
+}
