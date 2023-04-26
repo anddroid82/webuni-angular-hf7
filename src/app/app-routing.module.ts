@@ -8,8 +8,8 @@ import { AdminGuard } from './login/admin.guard'
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    canActivate:[AdminGuard]
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'login',

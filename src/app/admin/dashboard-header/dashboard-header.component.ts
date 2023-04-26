@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
 
 @Component({
@@ -7,10 +8,11 @@ import { LoginService } from 'src/app/login/login.service';
   styleUrls: ['./dashboard-header.component.scss']
 })
 export class DashboardHeaderComponent {
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router:Router) {
   }
   
   logoutClicked(){
     this.loginService.removeLoggedUserFromStorage();
+    this.router.navigateByUrl('login');
   }
 }
