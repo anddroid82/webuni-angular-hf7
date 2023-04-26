@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+
+.task-list-item {
+    background-color: $blue-color;
+    color: $text-color;
+    border-radius: 10px !important;
+    padding: 10px;
+    margin: 5px 0;
+}
+

@@ -1,11 +1,9 @@
 <app-dashboard-header></app-dashboard-header>
 
-<h3>Feladatok</h3>
-<div class="tasks">
-    
-</div>
+<div class="container-fluid">
+    <h3>Feladatok</h3>
+    <app-task-list [taskList]="tasksProgress" (statusChange)="statusChanged()"></app-task-list>
 
-<h3>Kész feladatok</h3>
-<div class="tasks">
-
+    <h3>Kész feladatok</h3>
+    <app-task-list [taskList]="tasksFinished"></app-task-list>
 </div>

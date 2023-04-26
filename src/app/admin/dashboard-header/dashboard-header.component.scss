@@ -1,13 +1,12 @@
-@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
-
 @import "../../../styles.scss";
 
 .menu {
     background-color: $blue-color;
+    margin-bottom: 10px;
 }
 
 .menu-btn {
-    @extend .btn,.btn-primary;
+    @extend .my-btn;
     margin: 10px;
     background-color: $gray-color;
     color: $text-color;

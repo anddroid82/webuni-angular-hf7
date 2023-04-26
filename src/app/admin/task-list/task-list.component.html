@@ -1,1 +1,6 @@
-<p>task-list works!</p>
+<div class="container-fluid">
+    <div *ngFor="let task of taskList" class="task-list-item list-group-item d-flex justify-content-between align-items-center">
+        <span>{{task|task}}</span>
+        <span class="badge" *ngIf="!task.status"><button class="btn btn-warning" (click)="setStatus(task.id,true)">Kész</button></span>
+    </div>
+</div>

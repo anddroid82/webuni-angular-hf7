@@ -1,7 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "~bootstrap/dist/css/bootstrap.css";
 
 $gray-color: #332d2d;
 $text-color: #fff;
 $blue-color: #5d24d4;
+
+.my-btn {
+    margin: 10px;
+    background-color: $gray-color;
+    color: $text-color;
+    border-color: $text-color;
+    border-width: 2px;
+    border-radius: 5px;
+    border-style: solid;
+    &:hover {
+        background-color: $text-color;
+        color: $gray-color;
+        border-color: $text-color;
+    }
+}

@@ -10,7 +10,7 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path:'new',
+    path:'newtask',
     component: TaskNewComponent
   },
   {
