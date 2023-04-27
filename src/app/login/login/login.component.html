@@ -1,7 +1,7 @@
 <div class="login-wrapper">
     <div class="login-content">
         <h3><i class="bi bi-key"></i> Bejelentkezés</h3>
-        <input class="form-control" [(ngModel)]="username" placeholder="felhasználónév" />
+        <input class="form-control" [(ngModel)]="username" placeholder="felhasználónév" (keyup.enter)="loginClicked()" />
         <button class="login-btn" (click)="loginClicked()"><i class="bi bi-box-arrow-in-right"></i> Belépés</button>
         <button class="login-btn" (click)="registrationClicked()"><i class="bi bi-person-plus"></i> Regisztráció és belépés</button>
     </div>
