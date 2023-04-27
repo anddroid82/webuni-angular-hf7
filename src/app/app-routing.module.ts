@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminGuard } from './login/admin.guard'
+import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate:[LoginGuard]
   },
   {
     path: 'dashboard',
