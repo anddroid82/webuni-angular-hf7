@@ -1,8 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
-$gray-color: #332d2d;
+$gray-color: #504646;
 $text-color: #fff;
-$blue-color: #5d24d4;
+$blue-color: #404e67;
+$green-color: #01a9ac;
+$orange-color: #fe9365;
+$red-color: #fe5d70;
 
 .my-btn {
     margin: 10px;
@@ -18,4 +22,5 @@ $blue-color: #5d24d4;
         color: $gray-color;
         border-color: $text-color;
     }
+    transform: skew(-10deg);
 }

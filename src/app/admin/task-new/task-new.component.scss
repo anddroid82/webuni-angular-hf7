@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+
+input {
+    margin: 5px 0;
+    transform: skew(-10deg);
+}
+
+.add-btn {
+    @extend .my-btn;
+    &:hover {
+        background-color: $green-color;
+        color: $text-color;
+    }
+}
+
+.back-btn {
+    @extend .my-btn;
+    &:hover {
+        background-color: $orange-color;
+        color: $text-color;
+    }
+}
