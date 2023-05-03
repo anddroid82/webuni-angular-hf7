@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Task } from '../task-new/task-new.component';
 import { TaskService } from '../service/task.service';
 
@@ -7,17 +7,29 @@ import { TaskService } from '../service/task.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
-  //tasksFinished:Task[] = [];
-  //tasksProgress:Task[] = [];
+export class DashboardComponent implements OnInit {
+  tasksFinished:Task[] = [];
+  tasksProgress:Task[] = [];
 
   constructor(private taskService: TaskService) {
   }
 
-  tasksFinished():Task[] {
+  ngOnInit(): void {
+    this.setTasksFinishedArray();
+    this.setTasksProgressArray();
+  }
+
+  setTasksFinishedArray() {
+    this.tasksFinished = this.taskService.tasks.filter(t => t.status);
+  }
+  setTasksProgressArray() {
+    this.tasksProgress = this.taskService.tasks.filter(t => !t.status)
+  }
+
+  tasksFinishedMethod():Task[] {
     return this.taskService.tasks.filter(t => t.status);
   }
-  tasksProgress(): any {
+  tasksProgressMethod():Task[] {
     return this.taskService.tasks.filter(t => !t.status)
   }
 
