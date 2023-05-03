@@ -8,11 +8,13 @@ import { Task } from '../task-new/task-new.component';
 export class TaskService {
   private storageTasksField:string = 'tm.tasks';
 
+  private _tasks:Task[] = [];
+
   constructor(private loginService: LoginService) { }
 
-  getMaxIdOfTaskArray(tasks:Task[]):number {
+  getMaxIdOfTaskArray():number {
     let maxId = 0;
-    tasks.forEach( t => {
+    this._tasks.forEach( t => {
       maxId = Math.max(maxId,t.id);
     });
     return maxId;
@@ -20,10 +22,13 @@ export class TaskService {
 
   addNewTask(task:Task) {
     task.user = this.loginService.readLoggedUserFromStorage()!;
-    let taskArray = this.readTaskArrayFromStorage();
-    task.id = this.getMaxIdOfTaskArray(taskArray)+1;
-    taskArray.push(task);
-    this.writeTaskArrayToStorage(taskArray);
+    task.id = this.getMaxIdOfTaskArray()+1;
+    this._tasks.push(task);
+    this.writeTaskArrayToStorage();
+  }
+
+  get tasks() {
+    return this.readTaskArrayFromStorage();
   }
 
   readTaskArrayFromStorage():Task[] {
@@ -35,19 +40,19 @@ export class TaskService {
     return taskArray;
   }
 
-  writeTaskArrayToStorage(tasks:Task[]) {
-    localStorage.setItem(this.storageTasksField,JSON.stringify(tasks));
+  writeTaskArrayToStorage() {
+    localStorage.setItem(this.storageTasksField,JSON.stringify(this._tasks));
   }
 
   setTaskStatus(taskId:number,status:boolean) {
-    const taskArray = this.readTaskArrayFromStorage();
-    let moddedTaskArray = taskArray.map( t => {
+    let moddedTaskArray = this._tasks.map( t => {
       if (t.id === taskId) {
         t.status = status;
       }
       return t;
     })
-    this.writeTaskArrayToStorage(moddedTaskArray);
+    this._tasks = moddedTaskArray;
+    this.writeTaskArrayToStorage();
   }
 
 

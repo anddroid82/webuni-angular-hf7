@@ -6,7 +6,8 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { FormsModule } from '@angular/forms';
-import { TaskPipe } from './pipe/task.pipe'
+import { TaskPipe } from './pipe/task.pipe';
+import { TaskComponent } from './task/task.component'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TaskPipe } from './pipe/task.pipe'
     TaskListComponent,
     TaskNewComponent,
     DashboardHeaderComponent,
-    TaskPipe
+    TaskPipe,
+    TaskComponent
   ],
   imports: [
     CommonModule,

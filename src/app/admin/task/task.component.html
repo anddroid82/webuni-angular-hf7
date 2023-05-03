@@ -1,0 +1,6 @@
+<p>{{task | task}}
+
+    <span *ngIf="!task.status; else disagree"><button class="agree-btn" (click)="setStatus(true)"><i class="bi bi-check-circle"></i> Kész</button></span>
+    <ng-template #disagree><span><button class="disagree-btn" (click)="setStatus(false)"><i class="bi bi-person-workspace"></i> Folyamatban</button></span></ng-template>
+
+</p>

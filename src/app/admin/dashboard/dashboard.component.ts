@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Task } from '../task-new/task-new.component';
 import { TaskService } from '../service/task.service';
 
@@ -7,27 +7,19 @@ import { TaskService } from '../service/task.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit  {
+export class DashboardComponent {
+  //tasksFinished:Task[] = [];
+  //tasksProgress:Task[] = [];
 
-  tasksFinished:Task[] = [];
-  tasksProgress:Task[] = [];
-
-  constructor(private taskService:TaskService) {
-  }
-  
-  ngOnInit(): void {
-    this.refreshLists();
+  constructor(private taskService: TaskService) {
   }
 
-  refreshLists(){
-    const taskArray = this.taskService.readTaskArrayFromStorage();
-    this.tasksFinished = taskArray.filter( t => t.status);
-    this.tasksProgress = taskArray.filter( t => !t.status);
+  tasksFinished():Task[] {
+    return this.taskService.tasks.filter(t => t.status);
+  }
+  tasksProgress(): any {
+    return this.taskService.tasks.filter(t => !t.status)
   }
 
-  statusChanged(){
-    this.refreshLists();
-  }
-  
 
 }
