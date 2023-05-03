@@ -2,14 +2,13 @@
 
 <div class="container-fluid">
     <h3>Feladatok</h3>
-    <!-- <app-task-list [taskList]="tasksProgress" (statusChange)="statusChanged()"></app-task-list> -->
-
+    <!--<app-task-list [taskList]="this.tasksProgress"></app-task-list>-->
     <div *ngFor="let t of this.tasksProgressMethod()">
         <app-task [task]="t"></app-task>
     </div>
 
     <h3>Kész feladatok</h3>
-    <!-- <app-task-list [taskList]="tasksFinished" (statusChange)="statusChanged()"></app-task-list> -->
+    <!--<app-task-list [taskList]="this.tasksFinished"></app-task-list>-->
     <div *ngFor="let t of this.tasksFinishedMethod()">
         <app-task [task]="t"></app-task>
     </div>

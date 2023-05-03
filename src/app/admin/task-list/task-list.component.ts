@@ -18,7 +18,7 @@ export class TaskListComponent {
 
   setStatus(taskId:number,status:boolean) {
     this.taskService.setTaskStatus(taskId,status);
-    this.statusChange.emit();
+    this.taskList = this.taskService.tasks;
   }
 
 }
